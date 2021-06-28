@@ -1,8 +1,14 @@
 from django.shortcuts import render
 
+from slider.models import Slider
+
 
 def index(request):
-    return render(request, 'core/index.html')
+    sliders = Slider.objects.filter(is_active=True)
+    context = {
+        'sliders': sliders,
+    }
+    return render(request, 'core/index.html', context)
 
 
 def about(request):

@@ -59,11 +59,16 @@
         {% for product in products %}
           <div class="col-md-4">
             <div class="card shadow">
+              <img src="{{product.image.url}}" alt="" class="card-img-top">
               <div class="card-body">
                 <h3>{{product.name}}</h3>
-                <p class="lead">{{product.description}}</p>
-                <h5>{{product.price}}</h5>
+                <p class="lead">{{product.description|truncatechars:30}}</p>
+                <h5>$ {{product.price|floatformat:2}}/- Only</h5>
+                <div class="text-center mt-3">
+                  <a class="btn btn-block btn-primary" href="">Buy Now</a>
+                </div>
               </div>
+              
             </div>
           </div>
         {% endfor %}

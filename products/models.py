@@ -8,6 +8,7 @@ class Product(models.Model):
     price = models.FloatField(null=True, blank=True)
     is_digital = models.BooleanField(default=True, null=True, blank=True)
     is_available = models.BooleanField(default=True, null=True, blank=True)
+    image = models.ImageField(upload_to='products/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

@@ -44,11 +44,29 @@
     </div>
     {% endif %}
   </div>
-  <div class="row mt-4">
-    <div class="col-10 mx-auto">
-      <div class="jumbotron shadow border">
-        <h1 class="text-center">Welcome to Ecommerce App 🙏🏼</h1>
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col-10 mx-auto">
+        <div class="jumbotron shadow border">
+          <h1 class="text-center">Welcome to Ecommerce App 🙏🏼</h1>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row mt-4">
+        <h2 class="d-block w-100 text-center mb-4">Best Products</h2>
+        {% for product in products %}
+          <div class="col-md-4">
+            <div class="card shadow">
+              <div class="card-body">
+                <h3>{{product.name}}</h3>
+                <p class="lead">{{product.description}}</p>
+                <h5>{{product.price}}</h5>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
     </div>
   </div>
 </section>

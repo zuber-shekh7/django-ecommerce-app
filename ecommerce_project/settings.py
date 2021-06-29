@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # local
     'core.apps.CoreConfig',
     'slider.apps.SliderConfig',
+    'products.apps.ProductsConfig',
 ]
 
 MIDDLEWARE = [

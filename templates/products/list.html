@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %} {% block main %}
+<section class="container mt-4">
+  <div class="row">
+    <div class="container">
+      <h1 class="text-center">Products</h1>
+      <hr />
+    </div>
+    {% for product in products %}
+    <div class="col-4 mt-2">
+      <img
+        class="card-img-top"
+        src="{{product.image.url}}"
+        alt="{{product.name}}"
+      />
+      <div class="card">
+        <div class="card-body">
+          <h3>{{product.name}}</h3>
+          <p class="lead">{{product.description|truncatechars:30}}</p>
+          <h5>$ {{product.price|floatformat:2}}/- Only</h5>
+          <div class="text-center mt-3">
+            <a class="btn btn-block btn-info" href="">Add to Cart</a>
+            <a class="btn btn-block btn-primary" href="">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock main %}

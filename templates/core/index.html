@@ -59,7 +59,7 @@
         {% for product in products %}
           <div class="col-md-4">
             <div class="card shadow">
-              <img src="{{product.image.url}}" alt="" class="card-img-top">
+              <img src="{{product.image.url}}" alt="{{product.name}}" class="card-img-top">
               <div class="card-body">
                 <h3>{{product.name}}</h3>
                 <p class="lead">{{product.description|truncatechars:30}}</p>
